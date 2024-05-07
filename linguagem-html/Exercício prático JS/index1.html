@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora</title>
+</head>
+<body>
+
+<script>
+(function() {
+    var operacao = prompt("Escolha a operação: soma, subtração, multiplicação ou divisão").toLowerCase();
+
+    if (operacao !== "soma" && operacao !== "subtração" && operacao !== "multiplicação" && operacao !== "divisão") {
+        alert("Operação inválida!");
+        return ;
+    }
+
+    var numero1 = parseFloat(prompt("Insira o primeiro número:"));
+    var numero2 = parseFloat(prompt("Insira o segundo número:"));
+
+    if (isNaN(numero1) || isNaN(numero2)) {
+        alert("Por favor, insira números válidos.");
+        return ;
+    }
+
+    var resultado;
+
+    switch (operacao) {
+        case "soma":
+            resultado = numero1 + numero2;
+            break;
+        case "subtração":
+            resultado = numero1 - numero2;
+            break;
+        case "multiplicação":
+            resultado = numero1 * numero2;
+            break;
+        case "divisão":
+            resultado = numero1 / numero2;
+            break;
+    }
+    alert("O resultado da " + operacao + " é: " + resultado); }) ();
+</script>
+</body>
+</html>
